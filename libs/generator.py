@@ -31,10 +31,10 @@ class Generator(object):
             steps_set.add(tuple(steps))
 
         print("*" * 30)
-        print("Total generate {0} test case".format(len(steps_set)))
+        print("Total generate {0} test case for graph {1}".format(len(steps_set), self.graph))
         print("*" * 30)
         cases = list(steps_set)
-        for i in range(len(cases)):
+        for i in range(len(steps_set)):
             case_file = "{0}/{1}/{1}_case_{2}.txt".format(GRAPHS_PATH, self.graph, i+1)
             with open(case_file, "w") as f:
                 print("-" * 5 + " case {0} ".format(i+1) + "-" * 5)
